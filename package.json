@@ -1,0 +1,18 @@
+{
+  "name": "soulscape",
+  "version": "1.0.0",
+  "description": "Soulscape - Digital Safe Space: Emotion detection and visualization app",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm start --workspace=frontend\"",
+    "start": "npm run dev",
+    "build": "npm run build --workspace=frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}
