@@ -1,0 +1,256 @@
+:root {
+  --bg: #0c0d11;
+  --panel: #11131a;
+  --panel-2: #161925;
+  --text: #f7f7fb;
+  --muted: #b8bed1;
+  --accent: #7c8cf8;
+  --border: #252a3b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 20% 20%, #12162b, #0c0d11 40%), #0c0d11;
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 12px;
+}
+
+h1 {
+  margin: 4px 0 8px;
+  font-size: 30px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.muted {
+  color: var(--muted);
+  margin: 4px 0 0;
+  line-height: 1.5;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 20px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-card,
+.canvas-card,
+.journey {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.input {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  padding: 12px;
+  font-size: 15px;
+  resize: vertical;
+}
+
+.label {
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+
+.primary,
+.secondary {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primary {
+  background: linear-gradient(135deg, #8297ff, #b37bff);
+  color: #0c0d11;
+  width: 100%;
+}
+
+.primary:disabled,
+.secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondary {
+  background: var(--panel);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.history {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.entry-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.entry {
+  width: 100%;
+  text-align: left;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.entry:hover {
+  border-color: #3d4560;
+  transform: translateY(-1px);
+}
+
+.entry.active {
+  border-color: var(--accent);
+}
+
+.entry-date {
+  color: var(--muted);
+  margin: 0;
+  font-size: 12px;
+}
+
+.entry-title {
+  margin: 4px 0;
+  font-weight: 700;
+}
+
+.entry-text {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.canvas-card {
+  padding: 16px;
+  min-height: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.canvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.canvas-wrap {
+  background: #05060a;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  min-height: 620px;
+}
+
+.canvas {
+  width: 100%;
+  height: 600px;
+  display: block;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+
+.journey {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.journey-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 1080px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav {
+    flex-direction: column;
+  }
+
+  .canvas {
+    height: 420px;
+  }
+}
